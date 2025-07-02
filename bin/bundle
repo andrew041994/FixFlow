@@ -27,7 +27,11 @@ m = Module.new do
     bundler_version = nil
     update_index = nil
     ARGV.each_with_index do |a, i|
+<<<<<<< HEAD
       if update_index && update_index.succ == i && a =~ Gem::Version::ANCHORED_VERSION_PATTERN
+=======
+      if update_index && update_index.succ == i && a.match?(Gem::Version::ANCHORED_VERSION_PATTERN)
+>>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
         bundler_version = a
       end
       next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
@@ -41,13 +45,21 @@ m = Module.new do
     gemfile = ENV["BUNDLE_GEMFILE"]
     return gemfile if gemfile && !gemfile.empty?
 
+<<<<<<< HEAD
     File.expand_path("../../Gemfile", __FILE__)
+=======
+    File.expand_path("../Gemfile", __dir__)
+>>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
   end
 
   def lockfile
     lockfile =
       case File.basename(gemfile)
+<<<<<<< HEAD
       when "gems.rb" then gemfile.sub(/\.rb$/, gemfile)
+=======
+      when "gems.rb" then gemfile.sub(/\.rb$/, ".locked")
+>>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
       else "#{gemfile}.lock"
       end
     File.expand_path(lockfile)
@@ -60,6 +72,7 @@ m = Module.new do
     Regexp.last_match(1)
   end
 
+<<<<<<< HEAD
   def bundler_version
     @bundler_version ||=
       env_var_version || cli_arg_version ||
@@ -78,6 +91,21 @@ m = Module.new do
     requirement += ".a" if bundler_gem_version.prerelease?
 
     requirement
+=======
+  def bundler_requirement
+    @bundler_requirement ||=
+      env_var_version ||
+      cli_arg_version ||
+      bundler_requirement_for(lockfile_version)
+  end
+
+  def bundler_requirement_for(version)
+    return "#{Gem::Requirement.default}.a" unless version
+
+    bundler_gem_version = Gem::Version.new(version)
+
+    bundler_gem_version.approximate_recommendation
+>>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
   end
 
   def load_bundler!

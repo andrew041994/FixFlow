@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application uses Inertia.js with Vue 3 and Vuetify for the frontend.
+Run `bin/vite dev` to start the Vite dev server. Credentials for the
+seeded user are printed when running `rails db:seed`.
 
 Things you may want to cover:
 

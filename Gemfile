@@ -17,6 +17,14 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Client-side framework and front-end libraries
+gem "inertia_rails"
+gem "vite_rails"
+# Authentication
+gem "devise"
+# Cross-Origin Resource Sharing
+gem "rack-cors"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 

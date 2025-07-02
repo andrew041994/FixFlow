@@ -8,8 +8,10 @@ import {
   VAppBar,
   VBtn,
   VIcon,
-  VDialog
+  VDialog,
+  VMain
 } from 'vuetify/components'
+import Layout from '../layouts/Layout.vue'
 
 const vuetify = createVuetify({
   components: {
@@ -17,7 +19,8 @@ const vuetify = createVuetify({
     VAppBar,
     VBtn,
     VIcon,
-    VDialog
+    VDialog,
+    VMain
   },
 
   icons: {
@@ -39,15 +42,9 @@ createInertiaApp({
     const pages = import.meta.glob('../pages/**/*.vue', {
       eager: true,
     })
-    return pages[`../pages/${name}.vue`]
-
-    // To use a default layout, import the Layout component
-    // and use the following lines.
-    // see https://inertia-rails.dev/guide/pages#default-layouts
-    //
-    // const page = pages[`../pages/${name}.vue`]
-    // page.default.layout = page.default.layout || Layout
-    // return page
+    const page = pages[`../pages/${name}.vue`]
+    page.default.layout = page.default.layout || Layout
+    return page
   },
 
   setup({ el, App, props, plugin }) {

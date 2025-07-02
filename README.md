@@ -29,3 +29,5 @@ bundle install
 yarn install
 rails db:create db:migrate
 bin/dev
+
+Default login for development: admin@example.com / password

@@ -5,8 +5,8 @@
       <v-card-title class="justify-center">Sign in to FixFlow</v-card-title>
       <v-card-text>
         <v-form @submit.prevent="submit" data-turbo="false">
-          <v-text-field v-model="form.email" label="Email" type="email" outlined required class="mb-3" />
-          <v-text-field v-model="form.password" label="Password" type="password" outlined required class="mb-4" />
+          <v-text-field v-model="form.user.email" label="Email" type="email" outlined required class="mb-3" />
+          <v-text-field v-model="form.user.password" label="Password" type="password" outlined required class="mb-4" />
           <v-btn type="submit" :loading="form.processing" color="primary" block>Login</v-btn>
         </v-form>
       </v-card-text>
@@ -18,8 +18,10 @@
 import { Head, useForm } from '@inertiajs/vue3'
 
 const form = useForm({
-  email: '',
-  password: ''
+  user: {
+    email: '',
+    password: ''
+  }
 })
 
 function submit() {

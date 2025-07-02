@@ -1,0 +1,16 @@
+diff --git a/dev/null b/db/migrate/20250702080700_create_teams.rb
+new file mode 100644
+index 0000000..145f85a
+--- /dev/null
++++ b/db/migrate/20250702080700_create_teams.rb
+@@ -0,0 +1,9 @@
++class CreateTeams < ActiveRecord::Migration[8.0]
++  def change
++    create_table :teams do |t|
++      t.string :name
++
++      t.timestamps
++    end
++  end
++end
+

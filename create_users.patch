@@ -1,0 +1,19 @@
+diff --git a/dev/null b/db/migrate/20250702080701_create_users.rb
+new file mode 100644
+index 0000000..8f7d47b
+--- /dev/null
++++ b/db/migrate/20250702080701_create_users.rb
+@@ -0,0 +1,12 @@
++class CreateUsers < ActiveRecord::Migration[8.0]
++  def change
++    create_table :users do |t|
++      t.string :email
++      t.string :encrypted_password
++      t.string :role
++      t.references :team, null: false, foreign_key: true
++
++      t.timestamps
++    end
++  end
++end
+

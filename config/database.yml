@@ -4,22 +4,13 @@
 #   gem install pg
 # On macOS with Homebrew:
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-<<<<<<< HEAD
-# On macOS with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-=======
->>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
 # On Windows:
 #   gem install pg
 #       Choose the win32 build.
 #       Install PostgreSQL and put its /bin directory on your path.
 #
 # Configure Using Gemfile
-<<<<<<< HEAD
-# gem 'pg'
-=======
 # gem "pg"
->>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
 #
 default: &default
   adapter: postgresql
@@ -28,19 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-<<<<<<< HEAD
-development:
-  <<: *default
-  database: fixflow_api_development
-
-  # The specified database role being used to connect to postgres.
-  # To create additional roles in postgres see `$ createuser --help`.
-  # When left blank, postgres will use the default role. This is
-  # the same name as the operating system user that initialized the database.
-  #username: fixflow_api
-
-  # The password associated with the postgres role (username).
-=======
 
 development:
   <<: *default
@@ -53,7 +31,6 @@ development:
   #username: fixflow
 
   # The password associated with the PostgreSQL role (username).
->>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
   #password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -79,38 +56,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-<<<<<<< HEAD
-  database: fixflow_api_test
-=======
   database: fixflow_test
->>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
 #
-<<<<<<< HEAD
-# Instead, provide the password as a unix environment variable when you boot
-# the app. Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
-# for a full rundown on how to provide these environment variables in a
-# production deployment.
-#
-# On Heroku and other platform providers, you may have a full connection URL
-# available as an environment variable. For example:
-#
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
-#
-# You can use this database configuration with:
-#
-#   production:
-#     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: fixflow_api_production
-  username: fixflow_api
-  password: <%= ENV['FIXFLOW_API_DATABASE_PASSWORD'] %>
-=======
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:
 #
@@ -145,4 +96,3 @@ production:
     <<: *primary_production
     database: fixflow_production_cable
     migrations_paths: db/cable_migrate
->>>>>>> 5f65ed534cfec0850a02ca2c5d5a6cf5eb435a5b

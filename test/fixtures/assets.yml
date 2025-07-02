@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_number: MyString
+  make: MyString
+  model: MyString
+  location: MyString
+  description: MyText
+
+two:
+  asset_number: MyString
+  make: MyString
+  model: MyString
+  location: MyString
+  description: MyText

@@ -1,0 +1,19 @@
+diff --git a/app/models/work_order.rb b/app/models/work_order.rb
+new file mode 100644
+index 0000000..adf4e71
+--- /dev/null
++++ b/app/models/work_order.rb
+@@ -0,0 +1,10 @@
++class WorkOrder < ApplicationRecord
++  belongs_to :asset
++  belongs_to :user
++
++  before_create :generate_work_order_number
++
++  private
++
++  def generate_work_order_number
++    self.work_order_number = "WO-#{(WorkOrder.maximum(:id).to_i + 1).to_s.rjust(5, '0')}"
++  end
++end
+

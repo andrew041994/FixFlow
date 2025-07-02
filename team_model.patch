@@ -1,0 +1,11 @@
+
+diff --git a/app/models/team.rb b/app/models/team.rb
+new file mode 100644
+index 0000000..e69de29
+--- /dev/null
++++ b/app/models/team.rb
+@@ -0,0 +1,3 @@
++class Team < ApplicationRecord
++  has_many :users
++end
+

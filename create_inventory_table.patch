@@ -1,0 +1,25 @@
+diff --git a/db/migrate/20250702074000_create_inventory_items.rb b/db/migrate/20250702074000_create_inventory_items.rb
+new file mode 100644
+index 0000000000000000000000000000000000000000..5bd0ffa3b7be2e4e561c1b4bdeee569203f4e2f5
+--- /dev/null
++++ b/db/migrate/20250702074000_create_inventory_items.rb
+@@ -0,0 +1,18 @@
++class CreateInventoryItems < ActiveRecord::Migration[8.0]
++  def change
++    create_table :inventory_items do |t|
++      t.string :item_number
++      t.string :name
++      t.text :description
++      t.integer :quantity
++      t.decimal :unit_cost
++      t.string :location
++      t.integer :minimum_quantity
++      t.string :vendor
++
++      t.timestamps
++    end
++
++    add_index :inventory_items, :item_number, unique: true
++  end
++end
+

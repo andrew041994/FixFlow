@@ -1,0 +1,9 @@
+diff --git a/app/models/inventory_item.rb b/app/models/inventory_item.rb
+new file mode 100644
+index 0000000000000000000000000000000000000000..51a64b95ef66fedc73fbbce09cd4e1faff48b437
+--- /dev/null
++++ b/app/models/inventory_item.rb
+@@ -0,0 +1,2 @@
++class InventoryItem < ApplicationRecord
++end
+

@@ -1,0 +1,13 @@
+diff --git a/app/models/preventive_maintenance.rb b/app/models/preventive_maintenance.rb
+new file mode 100644
+index 0000000..27fb60f
+--- /dev/null
++++ b/app/models/preventive_maintenance.rb
+@@ -0,0 +1,6 @@
++class PreventiveMaintenance < ApplicationRecord
++  belongs_to :asset
++  belongs_to :user
++
++  validates :pm_number, presence: true, uniqueness: true
++end
+
